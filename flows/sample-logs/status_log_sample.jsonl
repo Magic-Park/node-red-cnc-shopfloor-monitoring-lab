@@ -1,4 +1,0 @@
-{"event_time":"2026-06-08T18:59:45.805Z","machine_id":"CNC-01","topic":"shopfloor/cnc01/status","status":"RUNNING","previous_status":null,"is_status_change":true,"source":"dashboard","event_type":"MACHINE_STATUS"}
-{"event_time":"2026-06-08T18:59:46.253Z","machine_id":"CNC-01","topic":"shopfloor/cnc01/status","status":"STOPPED","previous_status":"RUNNING","is_status_change":true,"source":"dashboard","event_type":"MACHINE_STATUS"}
-{"event_time":"2026-06-08T18:59:46.709Z","machine_id":"CNC-01","topic":"shopfloor/cnc01/status","status":"ALARM","previous_status":"STOPPED","is_status_change":true,"source":"dashboard","event_type":"MACHINE_STATUS"}
-{"event_time":"2026-06-08T18:59:52.613Z","machine_id":"CNC-01","topic":"shopfloor/cnc01/status","status":"ALARM","previous_status":"ALARM","is_status_change":false,"source":"dashboard","event_type":"MACHINE_STATUS"}

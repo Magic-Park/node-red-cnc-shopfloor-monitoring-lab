@@ -1,3 +1,0 @@
-{"event_time":"2026-06-08T18:59:46.709Z","machine_id":"CNC-01","topic":"shopfloor/cnc01/status","status":"ALARM","event_type":"MACHINE_ALARM","severity":"HIGH","message":"CNC-01 reported ALARM status"}
-{"event_time":"2026-06-08T18:59:52.366Z","machine_id":"CNC-01","topic":"shopfloor/cnc01/status","status":"ALARM","event_type":"MACHINE_ALARM","severity":"HIGH","message":"CNC-01 reported ALARM status"}
-{"event_time":"2026-06-08T19:00:07.300Z","machine_id":"CNC-01","topic":"shopfloor/cnc01/status","status":"ALARM","event_type":"MACHINE_ALARM","severity":"HIGH","message":"CNC-01 reported ALARM status"}
