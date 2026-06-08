@@ -1,1 +1,26 @@
-
+[
+    {
+        "id": "06cb2444299840da",
+        "type": "function",
+        "z": "e902722bc10202f6",
+        "name": "Build ALARM event",
+        "func": "if (msg.payload !== \"ALARM\") {\n    node.warn(\"Build Alarm Event received non-ALARM status: \" + msg.payload);\n    return null;\n}\n\nif (msg.previous_status === \"ALARM\") {\n    node.warn(\"Duplicate ALARM ignored. Machine is already in ALARM state.\");\n    return null;\n}\n\nmsg.status = msg.payload;\nmsg.event_type = \"MACHINE_ALARM\";\nmsg.severity = \"HIGH\";\nmsg.message = msg.machine_id + \" reported ALARM status\";\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 890,
+        "y": 700,
+        "wires": [
+            [
+                "60f0c1514b8d6dc5",
+                "d8143284d01c0069",
+                "39738dd5cb49b9dc",
+                "4829cdb22f58b893",
+                "b9c7893a738bfbe4"
+            ]
+        ]
+    }
+]
