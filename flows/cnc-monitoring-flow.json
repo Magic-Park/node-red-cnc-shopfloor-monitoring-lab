@@ -1,5 +1,910 @@
 [
     {
+        "id": "e902722bc10202f6",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "8da223d9d5030677",
+        "type": "ui-base",
+        "name": "CNC Shopfloor Lab",
+        "path": "/dashboard",
+        "appIcon": "",
+        "includeClientData": true,
+        "acceptsClientConfig": [
+            "ui-notification",
+            "ui-control"
+        ],
+        "showPathInSidebar": false,
+        "headerContent": "page",
+        "navigationStyle": "default",
+        "titleBarStyle": "default",
+        "showReconnectNotification": true,
+        "notificationDisplayTime": 1,
+        "showDisconnectNotification": true,
+        "allowInstall": false
+    },
+    {
+        "id": "a761c250d8ca3b6a",
+        "type": "ui-theme",
+        "name": "Standardthema",
+        "colors": {
+            "surface": "#ffffff",
+            "primary": "#0094CE",
+            "bgPage": "#eeeeee",
+            "groupBg": "#ffffff",
+            "groupOutline": "#cccccc"
+        },
+        "sizes": {
+            "density": "default",
+            "pagePadding": "12px",
+            "groupGap": "12px",
+            "groupBorderRadius": "4px",
+            "widgetGap": "12px"
+        }
+    },
+    {
+        "id": "8a9ef155b4e4b9ab",
+        "type": "ui-page",
+        "name": "CNC Monitoring",
+        "ui": "8da223d9d5030677",
+        "path": "/cnc-monitoring",
+        "icon": "home",
+        "layout": "grid",
+        "theme": "a761c250d8ca3b6a",
+        "breakpoints": [
+            {
+                "name": "Default",
+                "px": "0",
+                "cols": "3"
+            },
+            {
+                "name": "Tablet",
+                "px": "576",
+                "cols": "6"
+            },
+            {
+                "name": "Small Desktop",
+                "px": "768",
+                "cols": "9"
+            },
+            {
+                "name": "Desktop",
+                "px": "1024",
+                "cols": "12"
+            }
+        ],
+        "order": 1,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "34a7b942362965a0",
+        "type": "ui-group",
+        "name": "Machine Status",
+        "page": "8a9ef155b4e4b9ab",
+        "width": 6,
+        "height": 1,
+        "order": 1,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "35d4cb1ee47455d2",
+        "type": "ui-group",
+        "name": "Alarm Details",
+        "page": "8a9ef155b4e4b9ab",
+        "width": 6,
+        "height": 1,
+        "order": 2,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "c1c7dcf4c87d9b91",
+        "type": "ui-group",
+        "name": "Machine Controls",
+        "page": "8a9ef155b4e4b9ab",
+        "width": 6,
+        "height": 1,
+        "order": 3,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "7e147a1fddc8f76d",
+        "type": "ui-group",
+        "name": "Alarm History",
+        "page": "8a9ef155b4e4b9ab",
+        "width": "12",
+        "height": "4",
+        "order": 4,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "d10808bf3f808af6",
+        "type": "inject",
+        "z": "e902722bc10202f6",
+        "name": "RUNNING",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "RUNNING",
+        "payloadType": "str",
+        "x": 100,
+        "y": 380,
+        "wires": [
+            [
+                "8877287289276031"
+            ]
+        ]
+    },
+    {
+        "id": "a1e223a292c7656c",
+        "type": "debug",
+        "z": "e902722bc10202f6",
+        "name": "RUNNING",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 950,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "5f4d279ccb481420",
+        "type": "inject",
+        "z": "e902722bc10202f6",
+        "name": "ALARM",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "ALARM",
+        "payloadType": "str",
+        "x": 110,
+        "y": 600,
+        "wires": [
+            [
+                "8877287289276031"
+            ]
+        ]
+    },
+    {
+        "id": "c429417f82e4d705",
+        "type": "inject",
+        "z": "e902722bc10202f6",
+        "name": "STOPPED",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "STOPPED",
+        "payloadType": "str",
+        "x": 100,
+        "y": 480,
+        "wires": [
+            [
+                "8877287289276031"
+            ]
+        ]
+    },
+    {
+        "id": "30a63c07e131d30d",
+        "type": "change",
+        "z": "e902722bc10202f6",
+        "name": "Build RUNNING message",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "RUNNING",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "shopfloor/cnc01/status",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "machine_id",
+                "pt": "msg",
+                "to": "CNC-01",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 170,
+        "y": 760,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "84201374656855db",
+        "type": "change",
+        "z": "e902722bc10202f6",
+        "name": "Build STOPPED message",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "STOPPED",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "shopfloor/cnc01/status",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "machine_id",
+                "pt": "msg",
+                "to": "CNC-01",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 170,
+        "y": 800,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e28324fa4b4cc67e",
+        "type": "change",
+        "z": "e902722bc10202f6",
+        "name": "Build ALARM message",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "ALARM",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "shopfloor/cnc01/status",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "machine_id",
+                "pt": "msg",
+                "to": "CNC-01",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 160,
+        "y": 840,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ca67b5102e94a6cd",
+        "type": "switch",
+        "z": "e902722bc10202f6",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "RUNNING",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "STOPPED",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "ALARM",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 3,
+        "x": 650,
+        "y": 580,
+        "wires": [
+            [
+                "a1e223a292c7656c",
+                "7294a522142940cd"
+            ],
+            [
+                "ba311d606b9f4bae",
+                "7294a522142940cd"
+            ],
+            [
+                "7294a522142940cd",
+                "06cb2444299840da"
+            ]
+        ]
+    },
+    {
+        "id": "ba311d606b9f4bae",
+        "type": "debug",
+        "z": "e902722bc10202f6",
+        "name": "STOPPED",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 950,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "c063d2453a28e3d3",
+        "type": "debug",
+        "z": "e902722bc10202f6",
+        "name": "ALARM",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1600,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "df40ecdf7ebc17bf",
+        "type": "change",
+        "z": "e902722bc10202f6",
+        "name": "Build ALARM event",
+        "rules": [
+            {
+                "t": "set",
+                "p": "event_type",
+                "pt": "msg",
+                "to": "MACHINE_ALARM",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "severity",
+                "pt": "msg",
+                "to": "HIGH",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "message",
+                "pt": "msg",
+                "to": "CNC-01 reported ALARM status",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 150,
+        "y": 880,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "0d5be42ccc694edf",
+        "type": "function",
+        "z": "e902722bc10202f6",
+        "name": "Add event_time ",
+        "func": "msg.event_time = new Date().toISOString();\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 140,
+        "y": 920,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "60f0c1514b8d6dc5",
+        "type": "function",
+        "z": "e902722bc10202f6",
+        "name": "Prepare JSONL log ",
+        "func": "let logEntry = {\n    event_time: msg.event_time,\n    machine_id: msg.machine_id,\n    topic: msg.topic,\n    status: msg.payload,\n    event_type: msg.event_type,\n    severity: msg.severity,\n    message: msg.message\n};\n\nmsg.payload = JSON.stringify(logEntry) + \"\\n\";\n\nmsg.filename = \"D:/node-red/Logs/JSONLine/alarm_log.jsonl\";\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1230,
+        "y": 560,
+        "wires": [
+            [
+                "a1dc0461f7ebbb16"
+            ]
+        ]
+    },
+    {
+        "id": "a1dc0461f7ebbb16",
+        "type": "file",
+        "z": "e902722bc10202f6",
+        "name": "create logs",
+        "filename": "filename",
+        "filenameType": "msg",
+        "appendNewline": false,
+        "createDir": true,
+        "overwriteFile": "false",
+        "encoding": "utf8",
+        "x": 1430,
+        "y": 560,
+        "wires": [
+            [
+                "c063d2453a28e3d3"
+            ]
+        ]
+    },
+    {
+        "id": "7294a522142940cd",
+        "type": "ui-text",
+        "z": "e902722bc10202f6",
+        "group": "34a7b942362965a0",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "Current Machine Status",
+        "label": "CNC-01 Status:",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#717171",
+        "wrapText": false,
+        "className": "",
+        "value": "payload",
+        "valueType": "msg",
+        "x": 590,
+        "y": 940,
+        "wires": []
+    },
+    {
+        "id": "a5530b4df0c94379",
+        "type": "ui-text",
+        "z": "e902722bc10202f6",
+        "group": "35d4cb1ee47455d2",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "Last Alarm Time",
+        "label": "Last Alarm Time",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#717171",
+        "wrapText": false,
+        "className": "",
+        "value": "payload",
+        "valueType": "msg",
+        "x": 1400,
+        "y": 640,
+        "wires": []
+    },
+    {
+        "id": "d59c7365119fdce2",
+        "type": "ui-text",
+        "z": "e902722bc10202f6",
+        "group": "35d4cb1ee47455d2",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "Alarm Severity",
+        "label": "Alarm Severity",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#717171",
+        "wrapText": false,
+        "className": "",
+        "value": "payload",
+        "valueType": "msg",
+        "x": 1400,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "d13e67c633a21ea1",
+        "type": "ui-text",
+        "z": "e902722bc10202f6",
+        "group": "35d4cb1ee47455d2",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "name": "Alarm Message",
+        "label": "Alarm Message",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#717171",
+        "wrapText": false,
+        "className": "",
+        "value": "payload",
+        "valueType": "msg",
+        "x": 1400,
+        "y": 720,
+        "wires": []
+    },
+    {
+        "id": "d8143284d01c0069",
+        "type": "change",
+        "z": "e902722bc10202f6",
+        "name": "Last Alarm Time",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "event_time",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1200,
+        "y": 640,
+        "wires": [
+            [
+                "a5530b4df0c94379"
+            ]
+        ]
+    },
+    {
+        "id": "39738dd5cb49b9dc",
+        "type": "change",
+        "z": "e902722bc10202f6",
+        "name": "Alarm Severity",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "severity",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1200,
+        "y": 680,
+        "wires": [
+            [
+                "d59c7365119fdce2"
+            ]
+        ]
+    },
+    {
+        "id": "4829cdb22f58b893",
+        "type": "change",
+        "z": "e902722bc10202f6",
+        "name": "Alarm Message",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "message",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1200,
+        "y": 720,
+        "wires": [
+            [
+                "d13e67c633a21ea1"
+            ]
+        ]
+    },
+    {
+        "id": "02e26abb3f7509f1",
+        "type": "ui-button",
+        "z": "e902722bc10202f6",
+        "group": "c1c7dcf4c87d9b91",
+        "name": "Button RUNNING",
+        "label": "RUNNING",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "emulateClick": false,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "iconPosition": "left",
+        "payload": "RUNNING",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "buttonColor": "",
+        "textColor": "",
+        "iconColor": "",
+        "enableClick": true,
+        "enablePointerdown": false,
+        "pointerdownPayload": "",
+        "pointerdownPayloadType": "str",
+        "enablePointerup": false,
+        "pointerupPayload": "",
+        "pointerupPayloadType": "str",
+        "x": 130,
+        "y": 420,
+        "wires": [
+            [
+                "8877287289276031"
+            ]
+        ]
+    },
+    {
+        "id": "5fa1766877ec45ef",
+        "type": "ui-button",
+        "z": "e902722bc10202f6",
+        "group": "c1c7dcf4c87d9b91",
+        "name": "Button STOPPED",
+        "label": "STOPPED",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "emulateClick": false,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "iconPosition": "left",
+        "payload": "STOPPED",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "buttonColor": "",
+        "textColor": "",
+        "iconColor": "",
+        "enableClick": true,
+        "enablePointerdown": false,
+        "pointerdownPayload": "",
+        "pointerdownPayloadType": "str",
+        "enablePointerup": false,
+        "pointerupPayload": "",
+        "pointerupPayloadType": "str",
+        "x": 130,
+        "y": 540,
+        "wires": [
+            [
+                "8877287289276031"
+            ]
+        ]
+    },
+    {
+        "id": "68a8c05a4c7fa856",
+        "type": "ui-button",
+        "z": "e902722bc10202f6",
+        "group": "c1c7dcf4c87d9b91",
+        "name": "Button ALARM",
+        "label": "ALARM",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "emulateClick": false,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "iconPosition": "left",
+        "payload": "ALARM",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "buttonColor": "",
+        "textColor": "",
+        "iconColor": "",
+        "enableClick": true,
+        "enablePointerdown": false,
+        "pointerdownPayload": "",
+        "pointerdownPayloadType": "str",
+        "enablePointerup": false,
+        "pointerupPayload": "",
+        "pointerupPayloadType": "str",
+        "x": 140,
+        "y": 660,
+        "wires": [
+            [
+                "8877287289276031"
+            ]
+        ]
+    },
+    {
+        "id": "8877287289276031",
+        "type": "function",
+        "z": "e902722bc10202f6",
+        "name": "Build Machine Message",
+        "func": "let status = String(msg.payload).trim().toUpperCase();\n\nlet allowedStatuses = [\"RUNNING\", \"STOPPED\", \"ALARM\"];\n\nif (!allowedStatuses.includes(status)) {\n    node.warn(\"Invalid machine status: \" + msg.payload);\n    return null;\n}\n\nlet previousStatus = flow.get(\"currentMachineStatus\") || null;\n\nmsg.payload = status;\nmsg.topic = \"shopfloor/cnc01/status\";\nmsg.machine_id = \"CNC-01\";\nmsg.event_time = new Date().toISOString();\nmsg.previous_status = previousStatus;\nmsg.is_status_change = previousStatus !== status;\n\nif (msg._client) {\n    msg.source = \"dashboard\";\n} else {\n    msg.source = \"inject\";\n}\n\nflow.set(\"currentMachineStatus\", status);\n\ndelete msg._client;\ndelete msg._event;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 450,
+        "y": 480,
+        "wires": [
+            [
+                "ca67b5102e94a6cd",
+                "4f05f5ad33c004ba"
+            ]
+        ]
+    },
+    {
+        "id": "4f05f5ad33c004ba",
+        "type": "function",
+        "z": "e902722bc10202f6",
+        "name": "Prepare Status JSONL Log",
+        "func": "let statusLogEntry = {\n    event_time: msg.event_time,\n    machine_id: msg.machine_id,\n    topic: msg.topic,\n    status: msg.payload,\n    source: msg.source,\n    event_type: \"MACHINE_STATUS\"\n};\n\nmsg.payload = JSON.stringify(statusLogEntry) + \"\\n\";\nmsg.filename = \"D:/node-red/Logs/JSONLine/status_log.jsonl\";\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 760,
+        "y": 480,
+        "wires": [
+            [
+                "58fd3908d58cc2e3"
+            ]
+        ]
+    },
+    {
+        "id": "58fd3908d58cc2e3",
+        "type": "file",
+        "z": "e902722bc10202f6",
+        "name": "write status log",
+        "filename": "filename",
+        "filenameType": "msg",
+        "appendNewline": false,
+        "createDir": true,
+        "overwriteFile": "false",
+        "encoding": "utf8",
+        "x": 1000,
+        "y": 480,
+        "wires": [
+            [
+                "991e7b68897bc9a2"
+            ]
+        ]
+    },
+    {
+        "id": "991e7b68897bc9a2",
+        "type": "debug",
+        "z": "e902722bc10202f6",
+        "name": "Debug Status Log",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1210,
+        "y": 480,
+        "wires": []
+    },
+    {
         "id": "06cb2444299840da",
         "type": "function",
         "z": "e902722bc10202f6",
@@ -22,5 +927,60 @@
                 "b9c7893a738bfbe4"
             ]
         ]
+    },
+    {
+        "id": "b9c7893a738bfbe4",
+        "type": "function",
+        "z": "e902722bc10202f6",
+        "name": "Build Alarm History Table",
+        "func": "let alarms = flow.get(\"alarmHistory\") || [];\n\nlet alarmEntry = {\n    time: msg.event_time,\n    machine: msg.machine_id,\n    status: msg.status,\n    severity: msg.severity,\n    message: msg.message,\n    source: msg.source\n};\n\nalarms.unshift(alarmEntry);\n\nalarms = alarms.slice(0, 10);\n\nflow.set(\"alarmHistory\", alarms);\n\nmsg.payload = alarms;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 950,
+        "y": 860,
+        "wires": [
+            [
+                "65c5fe50bc9ea31f"
+            ]
+        ]
+    },
+    {
+        "id": "65c5fe50bc9ea31f",
+        "type": "ui-table",
+        "z": "e902722bc10202f6",
+        "group": "7e147a1fddc8f76d",
+        "name": "Alarm History Table",
+        "label": "Latest Alarm Events",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "maxrows": 0,
+        "passthru": false,
+        "autocols": true,
+        "showSearch": true,
+        "deselect": true,
+        "selectionType": "none",
+        "columns": [],
+        "mobileBreakpoint": "sm",
+        "mobileBreakpointType": "defaults",
+        "action": "append",
+        "className": "",
+        "x": 1270,
+        "y": 860,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b669fcb471a99516",
+        "type": "global-config",
+        "env": [],
+        "modules": {
+            "@flowfuse/node-red-dashboard": "1.30.2"
+        }
     }
 ]
