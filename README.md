@@ -1,8 +1,8 @@
-# node-red-cnc-shopfloor-monitoring-lab
+# Node-RED CNC Shopfloor Monitoring Lab
 Node-RED lab project for CNC machine status monitoring, alarm detection, dashboard visualization, and JSONL log generation.
 
 
-# Node-RED CNC Shopfloor Monitoring Lab
+
 
 ## Project Overview
 
