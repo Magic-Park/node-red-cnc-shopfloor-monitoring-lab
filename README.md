@@ -35,3 +35,19 @@ Inject / Dashboard Button
            ├── Prepare Alarm JSONL Log
            ├── Alarm Details
            └── Alarm History Table
+
+
+
+## Screenshots
+
+### Dashboard Overview
+
+![Dashboard Overview](screenshots/dashboard-overview.png)
+
+### Alarm JSONL Log Output
+
+![Alarm JSONL Log Output](screenshots/alarm-log-output.png)
+
+### Status JSONL Log Output
+
+![Status JSONL Log Output](screenshots/status-log-output.png)
