@@ -38,16 +38,6 @@ Inject / Dashboard Button
 
 
 
-## Screenshots
 
-### Dashboard Overview
 
-![Dashboard Overview](screenshots/dashboard-overview.png)
 
-### Alarm JSONL Log Output
-
-![Alarm JSONL Log Output](screenshots/alarm-log-output.png)
-
-### Status JSONL Log Output
-
-![Status JSONL Log Output](screenshots/status-log-output.png)
