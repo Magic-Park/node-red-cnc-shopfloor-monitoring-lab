@@ -36,6 +36,15 @@ Inject / Dashboard Button
            ├── Alarm Details
            └── Alarm History Table
 ```
+## API Endpoint
+
+The project includes a simple HTTP API endpoint that allows external tools such as Postman to send CNC machine status updates into Node-RED.
+
+### Endpoint
+
+```http
+POST http://localhost:1880/api/cnc/status
+```
 ## Screenshots
 
 ### Dashboard Overview
