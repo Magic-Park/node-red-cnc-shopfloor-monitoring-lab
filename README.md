@@ -36,6 +36,7 @@ Inject / Dashboard Button
            ├── Alarm Details
            └── Alarm History Table
 ```
+
 ## API Endpoint
 
 The project includes a simple HTTP API endpoint that allows external tools such as Postman to send CNC machine status updates into Node-RED.
@@ -45,6 +46,62 @@ The project includes a simple HTTP API endpoint that allows external tools such 
 ```http
 POST http://localhost:1880/api/cnc/status
 ```
+
+### Example Request
+
+```json
+{
+  "machine_id": "CNC-01",
+  "status": "ALARM",
+  "source": "postman"
+}
+```
+
+### Example Success Response
+
+```json
+{
+  "success": true,
+  "message": "Machine status accepted",
+  "machine_id": "CNC-01",
+  "status": "ALARM",
+  "topic": "shopfloor/cnc-01/status",
+  "event_time": "2026-06-10T16:59:42.290Z"
+}
+```
+
+### Supported Status Values
+
+```text
+RUNNING
+STOPPED
+ALARM
+```
+
+### API Flow Logic
+
+```text
+Postman
+→ HTTP In: /api/cnc/status
+→ Parse API JSON
+→ Validate API Status
+→ HTTP Response
+→ Status JSONL logging
+→ Switch logic
+→ Dashboard update
+→ Alarm event handling
+→ Alarm JSONL logging
+→ Alarm history table
+```
+
+### API Flow Overview
+
+![API Flow Overview](screenshots/api-flow-overview.png)
+
+### Postman API Test
+
+![Postman API Test](screenshots/api-postman-success.png)
+
 ## Screenshots
 
 ### Dashboard Overview
@@ -58,3 +115,4 @@ POST http://localhost:1880/api/cnc/status
 ### Status JSONL Log Output
 
 ![Status JSONL Log Output](screenshots/status-log-output.png)
+
